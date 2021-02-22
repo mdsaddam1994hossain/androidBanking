@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BankProject2</string>
+    <string name="loginText">Login</string>
+    <string name="signUpText">SignUp</string>
+    <string name="email_text">Input Email</string>
+    <string name="password_text">Input Password</string>
+    <string name="loginButton_text">Login</string>
+    <string name="signUpButton_text">SignUp</string>
+    <string name="fname_text">Input first name</string>
+    <string name="lname_text">Input Last name</string>
+    <string name="phone_text">Input Phone Number</string>
+    <string name="emailText">Input Email </string>
+
+    <string-array name="service_name">
+        <item>Deposit</item>
+        <item>Transfer</item>
+        <item>Mobile Recharge</item>
+        <item>Utility Bill</item>
+        <item>Request Loan</item>
+        <item>Request Card</item>
+        <item>History</item>
+        <item>Settings</item>
+    </string-array>
+</resources>

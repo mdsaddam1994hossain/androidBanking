@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,9 +8,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
+    android:weightSum="3"
     tools:context=".HomePage">
 
     <GridView
+        android:layout_weight="3"
         android:id="@+id/grid_main_id"
         android:horizontalSpacing="20dp"
         android:verticalSpacing="20dp"
@@ -20,8 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="3"
+
         android:layout_gravity="center"/>
 
 </LinearLayout>
 
-</ScrollView>

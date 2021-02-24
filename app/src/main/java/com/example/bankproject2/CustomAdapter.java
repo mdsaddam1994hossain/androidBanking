@@ -5,16 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CustomAdapter extends BaseAdapter {
     String [] serviceName;
     Context context;
+    int[] serviceIcon;
     LayoutInflater inflater;
 
-    public CustomAdapter(String[] serviceName, Context context) {
+    public CustomAdapter(String[] serviceName, Context context,int[] serviceIcon) {
         this.serviceName = serviceName;
         this.context = context;
+        this.serviceIcon = serviceIcon;
     }
 
     @Override
@@ -40,7 +43,10 @@ public class CustomAdapter extends BaseAdapter {
             }
 
         TextView servicname = convertView.findViewById(R.id.sampleTextId);
+        ImageView imageView = convertView.findViewById(R.id.imageViewId);
         servicname.setText(serviceName[position]);
+        imageView.setImageResource(serviceIcon[position]);
+
 
         return convertView;
     }

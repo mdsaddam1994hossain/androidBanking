@@ -1,6 +1,7 @@
 package com.example.bankproject2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.DownloadManager;
 import android.content.Intent;
@@ -10,76 +11,97 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-public class HomePage extends AppCompatActivity {
+public class HomePage extends AppCompatActivity implements View.OnClickListener {
 
-    GridView gridView;
-    String[] servicename;
+    CardView depositcard,transfercard,mobileRechargeCard,utilityBill,historycard,cardrequest,loanrequest,settingcard,newAccountcard;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        servicename = getResources().getStringArray(R.array.service_name);
-        gridView = findViewById(R.id.grid_main_id);
+        depositcard = findViewById(R.id.depositCardId);
+        transfercard = findViewById(R.id.transferCardId);
+        mobileRechargeCard = findViewById(R.id.mobileRechargeCardId);
+        utilityBill = findViewById(R.id.utilityBillCardId);
+        historycard = findViewById(R.id.historyCardId);
+        cardrequest = findViewById(R.id.requestCardCardId);
+        loanrequest = findViewById(R.id.requestLoanCardId);
+        settingcard = findViewById(R.id.settingCardId);
+        newAccountcard = findViewById(R.id.newAccountCardId);
 
-        CustomAdapter customAdapter = new CustomAdapter(servicename,this);
 
-        gridView.setAdapter(customAdapter);
+        depositcard.setOnClickListener(this);
+        transfercard.setOnClickListener(this);
+        mobileRechargeCard.setOnClickListener(this);
+        utilityBill.setOnClickListener(this);
+        historycard.setOnClickListener(this);
+        cardrequest.setOnClickListener(this);
+        loanrequest.setOnClickListener(this);
+        settingcard.setOnClickListener(this);
+        newAccountcard.setOnClickListener(this);
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = servicename[position];
 
-                if(item.equals("Deposit")){
-                    Intent intent = new Intent(HomePage.this,DepositMethodActivity.class);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.depositCardId){
+
+            Intent intent = new Intent(HomePage.this,DepositMethodActivity.class);
                     Toast.makeText(getApplicationContext(),"Deposit is clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                }
+                   startActivity(intent);
+        }
 
-                if(item.equals("Transfer")){
-                    Intent intent = new Intent(HomePage.this,TransferMethodActivity.class);
-                    Toast.makeText(getApplicationContext(),"Transfer is clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                }
+        if(v.getId() == R.id.transferCardId){
 
-                if(item.equals("Mobile Recharge")){
-                    Intent intent = new Intent(HomePage.this,MobileRechargeMethod.class);
-                    Toast.makeText(getApplicationContext(),"Mobile Recharge is clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                }
+            Intent intent = new Intent(HomePage.this,TransferMethodActivity.class);
+            Toast.makeText(getApplicationContext(),"Transfer is clicked",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }
 
-                if(item.equals("Utility Bill")){
-                    Intent intent = new Intent(HomePage.this,UtitlityBillMethod.class);
-                    Toast.makeText(getApplicationContext(),"Utility Bill is clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                }
+        if(v.getId() == R.id.mobileRechargeCardId){
 
-                if(item.equals("Request Loan")){
-                    Intent intent = new Intent(HomePage.this,RequestLoanMethod.class);
-                    Toast.makeText(getApplicationContext(),"Request Loan is clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                }
+            Intent intent = new Intent(HomePage.this,MobileRechargeMethod.class);
+            Toast.makeText(getApplicationContext(),"Mobile Recharge is clicked",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }
 
-                if(item.equals("Request Card")){
-                    Intent intent = new Intent(HomePage.this,RequestCardMethod.class);
-                    Toast.makeText(getApplicationContext(),"Request Card is clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                }
+        if(v.getId() == R.id.utilityBillCardId){
 
-                if(item.equals("History")){
-                    Intent intent = new Intent(HomePage.this,HistoryActivity.class);
-                    Toast.makeText(getApplicationContext(),"History is clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                }
+            Intent intent = new Intent(HomePage.this,UtitlityBillMethod.class);
+            Toast.makeText(getApplicationContext(),"Utility bill is clicked",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }
+        if(v.getId() == R.id.historyCardId){
 
-                if(item.equals("Settings")){
-                    Intent intent = new Intent(HomePage.this,SettingActivity.class);
-                    Toast.makeText(getApplicationContext(),"Settings is clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                }
-            }
-        });
+            Intent intent = new Intent(HomePage.this,HistoryActivity.class);
+            Toast.makeText(getApplicationContext(),"History is clicked",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }
+        if(v.getId() == R.id.requestCardCardId){
+
+            Intent intent = new Intent(HomePage.this,RequestCardMethod.class);
+            Toast.makeText(getApplicationContext(),"card is clicked",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }
+        if(v.getId() == R.id.requestLoanCardId){
+
+            Intent intent = new Intent(HomePage.this,RequestLoanMethod.class);
+            Toast.makeText(getApplicationContext(),"loan is clicked",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }
+        if(v.getId() == R.id.settingCardId){
+
+            Intent intent = new Intent(HomePage.this,SettingActivity.class);
+            Toast.makeText(getApplicationContext(),"newaccount is clicked",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }if(v.getId() == R.id.newAccountCardId){
+
+            Intent intent = new Intent(HomePage.this,NewAccountActivity.class);
+            Toast.makeText(getApplicationContext(),"newAccount is clicked",Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+        }
     }
 }

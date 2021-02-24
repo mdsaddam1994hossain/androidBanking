@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankProject2">
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".NewAccountActivity"></activity>
+        <activity android:name=".SettingActivity" />
         <activity android:name=".HistoryActivity" />
         <activity android:name=".RequestCardMethod" />
         <activity android:name=".RequestLoanMethod" />

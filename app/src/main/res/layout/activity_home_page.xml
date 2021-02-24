@@ -8,20 +8,405 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    android:weightSum="3"
+    android:orientation="vertical"
+    android:background="@drawable/backgrounds"
+    android:weightSum="10"
     tools:context=".HomePage">
-
-    <GridView
-        android:layout_weight="3"
-        android:id="@+id/grid_main_id"
-        android:horizontalSpacing="20dp"
-        android:verticalSpacing="20dp"
-        android:listSelector="#f22"
+    
+    <RelativeLayout
+        android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="3"
+        android:layout_height="0dp">
+        <TextView
+            android:text="Home Page"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="#560360"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
 
-        android:layout_gravity="center"/>
+    <GridLayout
+       android:layout_weight="8"
+        android:id="@+id/grid_main_id"
+        android:listSelector="#A7AEED"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:rowCount="3"
+        android:columnCount="3"
+        android:columnOrderPreserved="false"
+        android:alignmentMode="alignMargins"
+        android:padding="14dp"
+        >
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/depositCardId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/depo"
+                    android:layout_marginTop="20dp"
+
+                   />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deposit"
+                    android:textColor="#035568"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--transfer card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/transferCardId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/transfers"
+                    android:layout_marginTop="20dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transfer"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#035568"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+<!--        mobile recharge card-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mobileRechargeCardId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/recharge"
+                    android:layout_marginTop="20dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile Recharge"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#035568"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+<!--       widget2nd row row-->
+
+<!--        Utility bill card-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/utilityBillCardId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/utilitybill"
+                    android:layout_marginTop="20dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Utility Bill"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#035568"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+<!--        history card-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/historyCardId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/history"
+                    android:layout_marginTop="20dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="History"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#035568"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+<!--    request for card-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/requestCardCardId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/card"
+                    android:layout_marginTop="20dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Request Card"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#035568"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--3rd row -->
+<!--    request loan card-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/requestLoanCardId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/loans"
+                    android:layout_marginTop="20dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Request Loan"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#035568"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+<!--     account settins card-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/settingCardId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/setting"
+                    android:layout_marginTop="20dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#035568"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+<!--        new account card-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/newAccountCardId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="10dp"
+            android:clickable="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="3"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/newaccount"
+                    android:layout_marginTop="20dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Account"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#035568"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </GridLayout>
 
 </LinearLayout>
 

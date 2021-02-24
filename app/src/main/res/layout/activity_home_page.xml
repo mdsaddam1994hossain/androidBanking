@@ -8,8 +8,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
+    android:background="#E6F6E9E3"
     android:orientation="vertical"
-    android:background="@drawable/backgrounds"
     android:weightSum="10"
     tools:context=".HomePage">
     
@@ -49,7 +49,8 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:backgroundTint="#8DEDCF">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,7 +60,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/depo"
                     android:layout_marginTop="20dp"
@@ -69,9 +70,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Deposit"
+                    android:layout_weight="1"
                     android:textColor="#035568"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:layout_marginTop="10dp"
                     android:paddingBottom="10dp"/>
 
@@ -88,7 +90,8 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:backgroundTint="#8DEDCF">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,9 +101,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/transfers"
+                    android:src="@drawable/transfer_new"
                     android:layout_marginTop="20dp"
 
                     />
@@ -108,10 +111,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Transfer"
+                    android:layout_weight="1"
                     android:layout_marginTop="10dp"
                     android:textColor="#035568"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:paddingBottom="10dp"/>
 
             </LinearLayout>
@@ -127,7 +131,8 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:backgroundTint="#8DEDCF">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -137,9 +142,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/recharge"
+                    android:src="@drawable/mobilerechargeicon"
                     android:layout_marginTop="20dp"
 
                     />
@@ -147,10 +152,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mobile Recharge"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     android:textColor="#035568"
+                    android:layout_weight="1"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingBottom="10dp"/>
 
@@ -170,7 +176,8 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:backgroundTint="#8DEDCF">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -193,7 +200,7 @@
                     android:layout_marginTop="15dp"
                     android:textColor="#035568"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingBottom="10dp"/>
 
@@ -212,7 +219,8 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:backgroundTint="#8DEDCF">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -224,7 +232,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="2"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/history"
+                    android:src="@drawable/histories"
                     android:layout_marginTop="20dp"
 
                     />
@@ -235,7 +243,7 @@
                     android:layout_marginTop="15dp"
                     android:textColor="#035568"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingBottom="10dp"/>
 
@@ -252,7 +260,8 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:backgroundTint="#8DEDCF">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -264,7 +273,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="2"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/card"
+                    android:src="@drawable/cards"
                     android:layout_marginTop="20dp"
 
                     />
@@ -275,7 +284,7 @@
                     android:layout_marginTop="15dp"
                     android:textColor="#035568"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingBottom="10dp"/>
 
@@ -293,7 +302,8 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:backgroundTint="#8DEDCF">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -305,7 +315,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="2"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/loans"
+                    android:src="@drawable/loanicon"
                     android:layout_marginTop="20dp"
 
                     />
@@ -313,10 +323,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Request Loan"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     android:textColor="#035568"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingBottom="10dp"/>
 
@@ -332,7 +342,8 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:backgroundTint="#8DEDCF">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -344,7 +355,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="2"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/setting"
+                    android:src="@drawable/settin"
                     android:layout_marginTop="20dp"
 
                     />
@@ -355,7 +366,7 @@
                     android:layout_marginTop="15dp"
                     android:textColor="#035568"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingBottom="10dp"/>
 
@@ -373,7 +384,8 @@
             android:layout_rowWeight="1"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
-            android:clickable="true">
+            android:clickable="true"
+            android:backgroundTint="#8DEDCF">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -393,16 +405,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Account"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="20dp"
                     android:textColor="#035568"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:paddingLeft="10dp"
                     android:paddingBottom="10dp"/>
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
+
 
 
 

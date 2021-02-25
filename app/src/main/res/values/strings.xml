@@ -11,14 +11,11 @@
     <string name="phone_text">Input Phone Number</string>
     <string name="emailText">Input Email </string>
 
-    <string-array name="service_name">
-        <item>Deposit</item>
-        <item>Transfer</item>
-        <item>Mobile Recharge</item>
-        <item>Utility Bill</item>
-        <item>Request Loan</item>
-        <item>Request Card</item>
-        <item>History</item>
-        <item>Settings</item>
+    <string-array name="transection_service">
+        <item>bKash</item>
+        <item>Rokect</item>
+        <item>Nagad</item>
+        <item>Paypal</item>
+        <item>Webmoney</item>
     </string-array>
 </resources>

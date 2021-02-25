@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".DepositMethodActivity">
 
     <LinearLayout
@@ -29,5 +30,16 @@
             android:textColor="@color/white"/>
 
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/depositlistViewId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:divider="#E3EAEF"
+        android:listSelector="#564A9A"
+        android:dividerHeight="1dp"
+        />
+
 
 </LinearLayout>

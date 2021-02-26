@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TransferForm"
+    tools:context=".RechargeForm"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,7 +18,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transfer Form"
+            android:text="Mobile Recharge"
             android:textColor="@color/white"
             android:textSize="30sp" />
     </LinearLayout>
@@ -42,9 +42,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Transfer"
+            android:text="Mobile Recharge"
             android:editable="false"
-            android:id="@+id/transferoperationType"
+            android:id="@+id/rechargeOperation"
             android:background="#CFF4EE"
             android:padding="10dp"/>
 
@@ -69,7 +69,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:id="@+id/transferaccountNumberId"
+            android:id="@+id/rechargefromaccountNumberId"
             android:background="#CFF4EE"
             android:padding="10dp"/>
 
@@ -86,16 +86,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Transfer To"
+            android:text="Recharge To"
             android:textSize="15sp"
-           />
+            />
         <EditText
             android:layout_weight="4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="hello"
-            android:id="@+id/transfermethodNameId"
+            android:id="@+id/rechargeaccountNameId"
             android:background="#CFF4EE"
             android:padding="10dp"/>
 
@@ -109,11 +109,11 @@
         android:padding="8dp"
         >
         <TextView
-            android:id="@+id/transfermethodId"
+            android:id="@+id/operatormethodId"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="method number"
+            android:text="Operator number"
             android:textSize="15dp"/>
         <EditText
             android:layout_weight="4"
@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:background="#CFF4EE"
-            android:id="@+id/transfermethodNumber"
+            android:id="@+id/oparatorNumber"
             android:padding="10dp"/>
 
     </LinearLayout>
@@ -144,7 +144,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:id="@+id/transferamountId"
+            android:id="@+id/rechargeamountId"
             android:background="#CFF4EE"
             android:padding="10dp"/>
 
@@ -184,6 +184,5 @@
             />
 
     </LinearLayout>
-
 
 </LinearLayout>

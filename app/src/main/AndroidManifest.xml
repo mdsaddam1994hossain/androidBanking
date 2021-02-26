@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankProject2">
-        <activity android:name=".TransferForm"></activity>
-        <activity android:name=".DepositForm" />
+        <activity android:name=".UtilityForm"></activity>
+        <activity android:name=".RechargeForm" />
+        <activity android:name=".TransferForm" />
         <activity android:name=".NewAccountActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".HistoryActivity" />
@@ -20,6 +21,7 @@
         <activity android:name=".MobileRechargeMethod" />
         <activity android:name=".TransferMethodActivity" />
         <activity android:name=".DepositMethodActivity" />
+        <activity android:name=".DepositForm" />
         <activity android:name=".HomePage" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".MainActivity">

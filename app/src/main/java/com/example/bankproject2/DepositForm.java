@@ -1,16 +1,12 @@
 package com.example.bankproject2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.android.material.textfield.TextInputEditText;
-
+import androidx.appcompat.app.AppCompatActivity;
 
 public class DepositForm extends AppCompatActivity {
-
     EditText methodname;
     TextView methodNumber,methodPin;
     @Override
@@ -26,12 +22,14 @@ public class DepositForm extends AppCompatActivity {
         if(bundle != null){
 
             String  values = bundle.getString("items");
-           methodname.setText(values);
-           methodNumber.setText(values +" Number");
+            methodname.setText(values);
+            methodNumber.setText(values +" Number");
             methodPin.setText(values +" Pin");
 
 
 
         }
     }
+
+
 }

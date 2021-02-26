@@ -4,12 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MobileRechargeMethod">
+    tools:context=".MobileRechargeMethod"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="mobile recharge is work"/>
+        android:orientation="vertical"
+        android:background="#E635A5">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Recharge"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#041D67"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System Available For Mobile Reharge"
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/rechargelistViewId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:divider="#E3EAEF"
+        android:listSelector="#564A9A"
+        android:dividerHeight="1dp"
+        />
+
 
 </LinearLayout>

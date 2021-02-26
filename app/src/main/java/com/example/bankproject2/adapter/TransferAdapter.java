@@ -1,4 +1,4 @@
-package com.example.bankproject2;
+package com.example.bankproject2.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.bankproject2.R;
 
 public class TransferAdapter extends BaseAdapter {
 

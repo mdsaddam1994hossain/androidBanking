@@ -6,28 +6,29 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.bankproject2.R;
-
-public class TransferForm extends AppCompatActivity {
-
+public class UtilityForm extends AppCompatActivity {
 
     EditText methodname;
-    TextView methodNumber;
+    TextView methodName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transfer_form);
+        setContentView(R.layout.activity_utility_form);
 
-        methodname = findViewById(R.id.transfermethodNameId);
-        methodNumber = findViewById(R.id.transfermethodId);
+        methodname = findViewById(R.id.utilitymethodNameId);
+        methodName = findViewById(R.id.utilitymethodId);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
+
             String  values = bundle.getString("items");
             methodname.setText(values);
-            methodNumber.setText(values+ " Number");
+            methodName.setText(values +" Number");
+
+
+
+
         }
     }
-
-
 }

@@ -6,28 +6,29 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.bankproject2.R;
+public class RechargeForm extends AppCompatActivity {
 
-public class TransferForm extends AppCompatActivity {
+    EditText operator;
+    TextView operatorName;
 
-
-    EditText methodname;
-    TextView methodNumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transfer_form);
+        setContentView(R.layout.activity_recharge_form);
 
-        methodname = findViewById(R.id.transfermethodNameId);
-        methodNumber = findViewById(R.id.transfermethodId);
+        operator = findViewById(R.id.rechargeaccountNameId);
+        operatorName = findViewById(R.id.operatormethodId);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
+
             String  values = bundle.getString("items");
-            methodname.setText(values);
-            methodNumber.setText(values+ " Number");
+            operator.setText(values);
+            operatorName.setText(values +" Number");
+            
+
+
+
         }
     }
-
-
 }

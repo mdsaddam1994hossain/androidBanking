@@ -4,12 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UtitlityBillMethod">
+    tools:context=".UtitlityBillMethod"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Utility bill work"
-        android:textSize="20dp"/>
+        android:orientation="vertical"
+        android:background="#D73FF1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UTILITY BILL"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System Available For Utility Bill"
+            android:textSize="15sp"
+            android:padding="5dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"/>
 
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/utilitylistViewId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:divider="#E3EAEF"
+        android:listSelector="#CC9266"
+        android:dividerHeight="1dp"
+        />
 </LinearLayout>

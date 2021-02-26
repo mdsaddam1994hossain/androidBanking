@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.bankproject2.adapter.DepositAdapter;
+
 public class DepositMethodActivity extends AppCompatActivity  {
 
     String[] serviceName;
@@ -30,7 +32,7 @@ public class DepositMethodActivity extends AppCompatActivity  {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     String methName = serviceName[position];
                     Toast.makeText(getApplicationContext(),methName,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(DepositMethodActivity.this,DepositForm.class);
+                    Intent intent = new Intent(DepositMethodActivity.this, DepositForm.class);
                     intent.putExtra("items",methName);
                     startActivity(intent);
                 }

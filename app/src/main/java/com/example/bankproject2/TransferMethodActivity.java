@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.bankproject2.adapter.TransferAdapter;
+
 public class TransferMethodActivity extends AppCompatActivity {
 
     String[] serviceName;
@@ -31,7 +33,7 @@ public class TransferMethodActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String methName = serviceName[position];
                 Toast.makeText(getApplicationContext(),methName,Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(TransferMethodActivity.this,TransferForm.class);
+                Intent intent = new Intent(TransferMethodActivity.this, TransferForm.class);
                 intent.putExtra("items",methName);
                 startActivity(intent);
             }

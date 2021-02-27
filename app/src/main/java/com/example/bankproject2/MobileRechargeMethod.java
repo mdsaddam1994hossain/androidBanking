@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ public class MobileRechargeMethod extends AppCompatActivity {
 
     String[] operatorName;
     ListView listView;
+    ImageView mobilerechargeBackButton;
     int[] rechargeImage ={R.drawable.grameenphone,R.drawable.robi,R.drawable.telitok,R.drawable.airtel,R.drawable.banglalink};
 
     @Override
@@ -24,6 +26,8 @@ public class MobileRechargeMethod extends AppCompatActivity {
 
         operatorName = getResources().getStringArray(R.array.operator_name);
         listView = findViewById(R.id.rechargelistViewId);
+        mobilerechargeBackButton = findViewById(R.id.mobileBeckButtonId);
+
         RechargeCustomAdapter rechargeCustomAdapter = new RechargeCustomAdapter(rechargeImage,operatorName,MobileRechargeMethod.this);
         listView.setAdapter(rechargeCustomAdapter);
 
@@ -35,6 +39,16 @@ public class MobileRechargeMethod extends AppCompatActivity {
                 Intent intent = new Intent(MobileRechargeMethod.this, RechargeForm.class);
                 intent.putExtra("items",methName);
                 startActivity(intent);
+            }
+        });
+
+        mobilerechargeBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId() == R.id.mobileBeckButtonId){
+                    Intent intent = new Intent(MobileRechargeMethod.this,HomePage.class);
+                    startActivity(intent);
+                }
             }
         });
     }

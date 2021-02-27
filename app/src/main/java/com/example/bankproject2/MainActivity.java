@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button loginButton,signUpButton;
+    TextInputEditText emailEdit,passwordEdit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         loginButton = findViewById(R.id.login_Button_Id);
         signUpButton = findViewById(R.id.signUp_Button_Id);
+        emailEdit = findViewById(R.id.emailId);
+        passwordEdit = findViewById(R.id.passwoedId);
 
         loginButton.setOnClickListener(this);
         signUpButton.setOnClickListener(this);

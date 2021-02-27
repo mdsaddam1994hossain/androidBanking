@@ -8,28 +8,50 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#D73FF1">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="UTILITY BILL"
-            android:textSize="25sp"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/white"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="System Available For Utility Bill"
-            android:textSize="15sp"
-            android:padding="5dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/white"/>
+        android:weightSum="10"
+        android:background="#D73FF1"
+        >
 
+        <ImageView
+            android:src="@drawable/back_24"
+            android:id="@+id/utilityBeckButtonId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_weight="2"
+            android:layout_gravity="center_vertical"
+            />
+
+        <LinearLayout
+            android:layout_weight="8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#D73FF1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UTILITY BILL"
+                android:textSize="25sp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System Available For Utility Bill"
+                android:textSize="15sp"
+                android:padding="5dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
     </LinearLayout>
+
+
 
     <ListView
         android:id="@+id/utilitylistViewId"

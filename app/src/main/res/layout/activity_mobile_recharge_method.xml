@@ -8,28 +8,49 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:weightSum="10"
         android:background="#E635A5">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mobile Recharge"
-            android:textSize="25sp"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#041D67"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="System Available For Mobile Reharge"
-            android:textSize="15sp"
-            android:padding="5dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/white"/>
 
+        <ImageView
+            android:src="@drawable/back_24"
+            android:id="@+id/mobileBeckButtonId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_weight="2"
+            android:layout_gravity="center_vertical"
+            />
+
+        <LinearLayout
+            android:layout_weight="8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E635A5">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile Recharge"
+                android:textSize="25sp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#041D67"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System Available For Mobile Reharge"
+                android:textSize="15sp"
+                android:padding="5dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
     </LinearLayout>
+
+
 
     <ListView
         android:id="@+id/rechargelistViewId"

@@ -2,14 +2,18 @@ package com.example.bankproject2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class RechargeForm extends AppCompatActivity {
+public class RechargeForm extends AppCompatActivity implements View.OnClickListener {
 
     EditText operator;
     TextView operatorName;
+    ImageView mobileformbackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +22,9 @@ public class RechargeForm extends AppCompatActivity {
 
         operator = findViewById(R.id.rechargeaccountNameId);
         operatorName = findViewById(R.id.operatormethodId);
+        mobileformbackButton = findViewById(R.id.mobileformBeckButtonId);
+
+        mobileformbackButton.setOnClickListener(this);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
@@ -29,6 +36,15 @@ public class RechargeForm extends AppCompatActivity {
 
 
 
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.mobileformBeckButtonId){
+//            Intent intent = new Intent(RechargeForm.this,MobileRechargeMethod.class);
+//            startActivity(intent);
+            finish();
         }
     }
 }

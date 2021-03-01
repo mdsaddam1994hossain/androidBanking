@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         loginButton = findViewById(R.id.login_Button_Id);
         signUpButton = findViewById(R.id.signUp_Button_Id);
+
         emailEdit = findViewById(R.id.emailId);
         passwordEdit = findViewById(R.id.passwoedId);
 
@@ -110,11 +111,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         }
-        if(v.getId() == R.id.signUp_Button_Id){
-            Intent intent = new Intent(MainActivity.this,SignUpActivity.class);
+
+        if(v.getId() == R.id.drawerIdButton){
+            Intent intent = new Intent(MainActivity.this,HomeActivity.class);
             startActivity(intent);
 
         }
+
+
 
     }
 }

@@ -69,6 +69,16 @@
         android:backgroundTint="#08AA68"
         />
 
+    <Button
+        android:id="@+id/drawerIdButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to drawer Page"
+        android:textSize="20sp" android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="#08AA68"
+        />
+
 
 
 </LinearLayout>

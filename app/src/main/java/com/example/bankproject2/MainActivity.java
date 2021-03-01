@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.bankproject2.model.Customer;
 import com.example.bankproject2.restClient.RestClient;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList customers;
 
    // String restEmail,restPassword;
-    int custId;
+   static int custId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,20 +74,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             String email = emailEdit.getText().toString();
             String password = passwordEdit.getText().toString();
-            System.out.println("Password "+password+"email "+email);
+
             CustomerService customerService = RestClient.getRetrofitInstance().create(CustomerService.class);
             customerService.getCustomerByEmailAddPssword(email,password).enqueue(new Callback<Customer>() {
                 @Override
                 public void onResponse(Call<Customer> call, Response<Customer> response) {
                     Customer customer = response.body();
-                    System.out.println("Response "+response.body());
-                    System.out.println("customer "+customer);
-                    System.out.println("email----------"+email+response.body());
+                   
 
-                    if(customer.getEmail() != null && email.equals(customer.getEmail()) && password.equals(customer.getPassword())){
+                    if(email.equals(customer.getEmail()) && password.equals(customer.getPassword())){
+                        custId = customer.getCustId();
+                        System.out.println("customer is ----------------"+custId);
                         Intent intent = new Intent(MainActivity.this,HomePage.class);
+                       // intent.putExtra("custId",custId);
                         startActivity(intent);
 
+                    }else {
+                        Toast.makeText(MainActivity.this,"Email or password Not match",Toast.LENGTH_SHORT).show();
                     }
 
 

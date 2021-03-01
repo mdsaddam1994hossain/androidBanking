@@ -18,6 +18,9 @@ public interface CustomerService {
     @GET("/api/customer")
     Call<Customer> getCustomerById(@Query("custId") int custId);
 
+    @GET("/api/customerByEmail")
+    Call<Customer> getCustomerByEmailAddPssword(@Query("email") String custId, @Query("password") String password);
+
     @POST("/api/customer")
     Call<Customer> saveCustomer(@Body Customer c);
 }

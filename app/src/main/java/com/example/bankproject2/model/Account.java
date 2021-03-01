@@ -31,7 +31,6 @@ public class Account {
 
 
 
-
     public int getCustId() {
         return custId;
     }
@@ -57,7 +56,6 @@ public class Account {
         this.balance = balance;
     }
 
-
     public Date getOpenDate() {
         return openDate;
     }
@@ -73,4 +71,5 @@ public class Account {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

@@ -1,5 +1,8 @@
 package com.example.bankproject2.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Customer {
 
     int custId;
@@ -9,7 +12,7 @@ public class Customer {
     String email;
     String password;
     String securityquestion;
-
+    Set<Account> accounts= new HashSet<Account>();
 
 
     public int getCustId() {
@@ -21,6 +24,13 @@ public class Customer {
     }
 
 
+    public Set<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Set<Account> accounts) {
+        this.accounts = accounts;
+    }
 
 
     public String getFirstName() {
@@ -70,4 +80,5 @@ public class Customer {
     public void setSecurityquestion(String securityquestion) {
         this.securityquestion = securityquestion;
     }
+
 }

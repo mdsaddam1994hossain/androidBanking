@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextInputEditText emailEdit,passwordEdit;
 
     ArrayList customers;
+    int custId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.login_Button_Id){
+
             Intent intent = new Intent(MainActivity.this,HomePage.class);
             startActivity(intent);
 

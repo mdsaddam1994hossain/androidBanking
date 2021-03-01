@@ -1,5 +1,6 @@
 package com.example.bankproject2;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DepositForm extends AppCompatActivity implements View.OnClickListener {
@@ -15,6 +17,7 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
     TextView methodNumber,methodPin;
     Button depositButton,depoCancelButton;
     ImageView depositformbackButton;
+    AlertDialog.Builder alertdialogbuilder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +53,36 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
         if(v.getId() == R.id.depositButtonId){
             Intent intent = new Intent(DepositForm.this,HomePage.class);
             startActivity(intent);
+        }
+
+        if(v.getId() == R.id.depositcancelButtonId){
+
+            alertdialogbuilder = new AlertDialog.Builder(DepositForm.this);
+            alertdialogbuilder.setTitle("Eixt deposit");
+            alertdialogbuilder.setMessage("do you want to exit dposit?");
+            alertdialogbuilder.setIcon(R.drawable.dangerous_24);
+            alertdialogbuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+
+            alertdialogbuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+            alertdialogbuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+            AlertDialog alertDialog = alertdialogbuilder.create();
+            alertDialog.show();
+
         }
 
         if(v.getId() == R.id.deposifromtBeckButtonId){

@@ -8,6 +8,6 @@ import retrofit2.http.POST;
 
 public interface DepositService {
 
-    @POST("/api/deposit")
-    Call<Deposit> savedeposit(@Body Deposit d);
+//    @POST("/api/deposit")
+//    Call<Deposit> savedeposit(@Body Deposit d);
 }

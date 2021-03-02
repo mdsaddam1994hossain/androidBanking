@@ -106,14 +106,18 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
                     a.setBalance(newBalance);
                     accountService.updateAccount(a);
 
+                    System.out.println("cust id --------"+ a.getCustId());
                     System.out.println("oldBalance is --------"+ oldBalance);
                     System.out.println("newBalance is --------"+ newBalance);
 
                     Deposit d = new Deposit();
+
                     d.setAccountNumber(1);
                     d.setAmount(amount);
                     d.setDepositDate(date);
                     d.setMethod(methodname.getText().toString());
+
+
 
                     accountService.savedeposit(d);
 

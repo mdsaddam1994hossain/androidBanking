@@ -26,7 +26,7 @@ public interface AccountService {
     Call<Account> updateAccount(@Body Account a);
 
     @POST("/api/deposit")
-    Call<Deposit> savedeposit(@Body Deposit d);
+    Call<Deposit> savedeposit(@Body() Deposit d);
 
 
 }

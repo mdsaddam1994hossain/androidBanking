@@ -93,8 +93,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Toast.makeText(MainActivity.this,"Email or password Not match",Toast.LENGTH_SHORT).show();
                     }
 
-
-
                 }
 
                 @Override
@@ -104,11 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
             });
-
-
-
-
-
         }
         if(v.getId() == R.id.signUp_Button_Id){
             Intent intent = new Intent(MainActivity.this,SignUpActivity.class);

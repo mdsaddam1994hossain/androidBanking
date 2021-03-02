@@ -22,7 +22,7 @@ public interface AccountService {
     Call<Account> getAccountById(@Query("accountNumber") int accountNumber);
 
 
-    @PUT("/api/updateAccount")
+    @POST("/api/updateAccount")
     Call<Account> updateAccount(@Body Account a);
 
     @POST("/api/deposit")

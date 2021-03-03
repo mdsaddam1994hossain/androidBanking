@@ -37,7 +37,7 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
     ImageView depositformbackButton;
     AlertDialog.Builder alertdialogbuilder;
     int selected_account_number;
-    Spinner acNumber;
+    Spinner spinner;
    // Date date = new Date();
     List<Account> allAccount= new ArrayList<>();
 
@@ -52,9 +52,6 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deposit_form);
 
-//        accountNumber.add(0,1);
-//        accountNumber.add(1,2);
-//        accountNumber.add(2,3);
 
         methodname = findViewById(R.id.depositmethodNameId);
         methodNumber = findViewById(R.id.methodId);
@@ -65,18 +62,11 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
         depositformbackButton = findViewById(R.id.deposifromtBeckButtonId);
         depositAccountNumber = findViewById(R.id.depositaccountNumberId);
 
-        acNumber = findViewById(R.id.accountNumberId);
+        spinner = findViewById(R.id.accountNumberId);
 
         depositButton.setOnClickListener(this);
         depoCancelButton.setOnClickListener(this);
         depositformbackButton.setOnClickListener(this);
-
-
-
-
-
-
-
 
 
         AccountService accountService = RestClient.getRetrofitInstance().create(AccountService.class);
@@ -85,6 +75,15 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
             public void onResponse(Call<List<Account>> call, Response<List<Account>> response) {
                  allAccount = response.body();
 
+                 for (int i=0;i<allAccount.size();i++){
+                     accountNumber.add(allAccount.get(i).getAccountNumber());
+                     System.out.println("account number is---- "+ allAccount.get(i).getAccountNumber());
+                 }
+                System.out.println("total account is ======="+accountNumber.size());
+
+                ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(getApplicationContext(),android.R.layout.simple_spinner_item,accountNumber);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(dataAdapter);
             }
 
             @Override
@@ -111,20 +110,6 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
 
         }
 
-//
-        for(int i =0; i<allAccount.size(); i++){
-            accountNumber.add(allAccount.get(i).getAccountNumber());
-            System.out.println("account number-==========- "+ allAccount.get(i).getAccountNumber());
-        }
-
-        ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(this,android.R.layout.simple_spinner_item,accountNumber);
-
-        System.out.println("size=========="+dataAdapter.getCount());
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        acNumber.setAdapter(dataAdapter);
-
-
-
     }
 
 
@@ -132,12 +117,9 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         if(v.getId() == R.id.depositButtonId){
 
-
-
-
             Deposit d = new Deposit();
 
-            d.setAccountNumber(1);
+            d.setAccountNumber(Integer.parseInt(spinner.getSelectedItem().toString()));
        //     d.setDepositDate(date);
             d.setMethod(methodname.getText().toString());
             d.setAmount(Double.parseDouble(depositAmount.getText().toString()));
@@ -165,7 +147,7 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
             });
 
 
-            accountService.getAccountById(1).enqueue(new Callback<Account>() {
+            accountService.getAccountById(Integer.parseInt(spinner.getSelectedItem().toString())).enqueue(new Callback<Account>() {
                 @Override
                 public void onResponse(Call<Account> call, Response<Account> response) {
                     Account a = response.body();

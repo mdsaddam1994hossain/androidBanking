@@ -4,8 +4,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -19,6 +22,7 @@ import com.example.bankproject2.restService.DepositService;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -32,14 +36,25 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
     Button depositButton,depoCancelButton;
     ImageView depositformbackButton;
     AlertDialog.Builder alertdialogbuilder;
+    int selected_account_number;
+    Spinner acNumber;
    // Date date = new Date();
-    List<Account> allAccount;
+    List<Account> allAccount= new ArrayList<>();
+
+    List<Integer> accountNumber = new ArrayList<>();
+
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deposit_form);
+
+//        accountNumber.add(0,1);
+//        accountNumber.add(1,2);
+//        accountNumber.add(2,3);
 
         methodname = findViewById(R.id.depositmethodNameId);
         methodNumber = findViewById(R.id.methodId);
@@ -50,9 +65,17 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
         depositformbackButton = findViewById(R.id.deposifromtBeckButtonId);
         depositAccountNumber = findViewById(R.id.depositaccountNumberId);
 
+        acNumber = findViewById(R.id.accountNumberId);
+
         depositButton.setOnClickListener(this);
         depoCancelButton.setOnClickListener(this);
         depositformbackButton.setOnClickListener(this);
+
+
+
+
+
+
 
 
 
@@ -87,6 +110,21 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
 
 
         }
+
+//
+        for(int i =0; i<allAccount.size(); i++){
+            accountNumber.add(allAccount.get(i).getAccountNumber());
+            System.out.println("account number-==========- "+ allAccount.get(i).getAccountNumber());
+        }
+
+        ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(this,android.R.layout.simple_spinner_item,accountNumber);
+
+        System.out.println("size=========="+dataAdapter.getCount());
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        acNumber.setAdapter(dataAdapter);
+
+
+
     }
 
 
@@ -127,7 +165,7 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
             });
 
 
-            accountService.getAccountById(13).enqueue(new Callback<Account>() {
+            accountService.getAccountById(1).enqueue(new Callback<Account>() {
                 @Override
                 public void onResponse(Call<Account> call, Response<Account> response) {
                     Account a = response.body();
@@ -209,3 +247,23 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
 
 
 }
+
+
+
+
+
+//        acNumber.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                if(!acNumber.getSelectedItem().toString().equals("--Choose Class--"))
+//                {
+//                    selected_account_number = Integer.parseInt(acNumber.getSelectedItem().toString()) ;
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent)
+//            {
+//
+//            }
+//        });

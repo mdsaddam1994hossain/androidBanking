@@ -10,6 +10,8 @@
     <string name="lname_text">Input Last name</string>
     <string name="phone_text">Input Phone Number</string>
     <string name="emailText">Input Email </string>
+    <string name="settingText">Profile Settings </string>
+    <string name="settingTextsub">You Can Update only this Items</string>
 
     <string-array name="transection_service">
         <item>bKash</item>

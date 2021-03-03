@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -34,7 +32,7 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
     Button depositButton,depoCancelButton;
     ImageView depositformbackButton;
     AlertDialog.Builder alertdialogbuilder;
-
+   // Date date = new Date();
     List<Account> allAccount;
 
 
@@ -96,10 +94,13 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         if(v.getId() == R.id.depositButtonId){
 
+
+
+
             Deposit d = new Deposit();
 
             d.setAccountNumber(1);
-        //    d.setDepositDate(date);
+       //     d.setDepositDate(date);
             d.setMethod(methodname.getText().toString());
             d.setAmount(Double.parseDouble(depositAmount.getText().toString()));
 
@@ -125,85 +126,47 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
                 }
             });
 
-//
-//           AccountService accountService = RestClient.getRetrofitInstance().create(AccountService.class);
-//            accountService.getAccountById(1).enqueue(new Callback<Account>() {
-//                @Override
-//                public void onResponse(Call<Account> call, Response<Account> response) {
-//                    Account a = response.body();
-//
-////                    a.setAccountNumber(1);
-////                    a.setCustId(a.getCustId());
-////                    a.setAccountType(a.getAccountType());
-////                    double oldBalance = a.getBalance();
-////                    double amount = Double.parseDouble(depositAmount.getText().toString());
-////                    double newBalance = oldBalance + amount;
-////                    a.setBalance(newBalance);
-////                    a.setOpenDate(a.getOpenDate());
-////                    a.setPassword(a.getPassword());
-////                    System.out.println("N Balance--------------"+newBalance);
-////                    accountService.updateAccount(a).enqueue(new Callback<Account>() {
-////                        @Override
-////                        public void onResponse(Call<Account> call, Response<Account> response) {
-////
-////                            Toast.makeText(DepositForm.this,"Deposit Successfull",Toast.LENGTH_SHORT).show();
-////                            System.out.println("newBalance is --------"+ response.body().getBalance());
-////                       }
-////
-////                        @Override
-////                        public void onFailure(Call<Account> call, Throwable t) {
-////
-////                            t.printStackTrace();
-////
-////                        }
-////                    });
-//
-//
-//
-//                    // Deposit Record----
-//
-//                    Deposit d = new Deposit();
-//
-//                    d.setAccountNumber(1);
-//                    d.setDepositDate(date);
-//                    d.setMethod(methodname.getText().toString());
-//                    d.setAmount(Double.parseDouble(depositAmount.getText().toString()));
-//
-//
-//
-//                    accountService.savedeposit(d).enqueue(new Callback<Deposit>() {
-//
-//
-//                        @Override
-//                        public void onResponse(Call<Deposit> call, Response<Deposit> response) {
-//
-//                            Deposit deposit = response.body();
-//
-//                            Toast.makeText(DepositForm.this,"Deposit Record Successfull",Toast.LENGTH_SHORT).show();
-//                            System.out.println("deposit amount--------------"+deposit.getAmount());
-//                        }
-//
-//                        @Override
-//                        public void onFailure(Call<Deposit> call, Throwable t) {
-//                            System.out.println("Deposit record failed-----------"+t);
-//                            t.printStackTrace();
-//
-//                        }
-//                    });
-//
-//
-//
-//                }
-//
-//                @Override
-//                public void onFailure(Call<Account> call, Throwable t) {
-//                    System.out.println("Error ----"+t.getMessage());
-//                    t.printStackTrace();
-//                }
-//            });
-//
-//            Intent intent = new Intent(DepositForm.this,HomePage.class);
-//            startActivity(intent);
+
+            accountService.getAccountById(13).enqueue(new Callback<Account>() {
+                @Override
+                public void onResponse(Call<Account> call, Response<Account> response) {
+                    Account a = response.body();
+                    a.setAccountNumber(a.getAccountNumber());
+                    a.setCustId(a.getCustId());
+                    a.setAccountType(a.getAccountType());
+                    double amount = (Double.parseDouble(depositAmount.getText().toString()));
+                    double oldBalance = a.getBalance();
+                    double newBalance = (oldBalance + amount);
+
+                    a.setBalance(newBalance);
+                    //    a.setOpenDate(a.getOpenDate());
+                    a.setPassword(a.getPassword());
+                    accountService.updateAccount(a).enqueue(new Callback<Account>() {
+                        @Override
+                        public void onResponse(Call<Account> call, Response<Account> response) {
+
+                            Toast.makeText(DepositForm.this,response.body().getAccountNumber()+" Update Account Successfull",Toast.LENGTH_SHORT).show();
+                            System.out.println("new balance--------------------"+response.body().getBalance());
+                            Intent intent = new Intent(DepositForm.this, HomePage.class);
+                            startActivity(intent);
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<Account> call, Throwable t) {
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onFailure(Call<Account> call, Throwable t) {
+
+                }
+            });
+
+
+
         }
 
         if (v.getId() == R.id.depositcancelButtonId) {

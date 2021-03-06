@@ -2,6 +2,7 @@ package com.example.bankproject2.restService;
 
 import com.example.bankproject2.model.Account;
 import com.example.bankproject2.model.Deposit;
+import com.example.bankproject2.model.Transfer;
 
 
 import java.util.List;
@@ -27,6 +28,9 @@ public interface AccountService {
 
     @POST("/api/deposit")
     Call<Deposit> savedeposit(@Body() Deposit d);
+
+    @POST("/api/transfer")
+    Call<Transfer> savetransfer(@Body() Transfer t);
 
 
 }

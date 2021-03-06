@@ -16,9 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.bankproject2.model.Account;
 import com.example.bankproject2.model.Deposit;
+import com.example.bankproject2.model.History;
 import com.example.bankproject2.restClient.RestClient;
 import com.example.bankproject2.restService.AccountService;
 import com.example.bankproject2.restService.DepositService;
+import com.example.bankproject2.restService.HistoryService;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -31,8 +33,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DepositForm extends AppCompatActivity implements View.OnClickListener {
-    TextInputEditText methodname,depositAccountNumber,depositAmount;
-    TextInputLayout methodNumber,methodPin;
+    TextInputEditText methodname,depositAmount,operationType;
+    TextInputLayout depositmethodNumber,methodPin;
     Button depositButton,depoCancelButton;
     ImageView depositformbackButton;
     AlertDialog.Builder alertdialogbuilder;
@@ -47,20 +49,21 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deposit_form);
 
-
         methodname = findViewById(R.id.depositmethodNameId);
-        methodNumber = findViewById(R.id.methodId);
+        operationType = findViewById(R.id.depositoperationType);
+        depositmethodNumber = findViewById(R.id.methodId);
         methodPin = findViewById(R.id.methodPin);
         depositAmount = findViewById(R.id.depositamountId);
         depositButton = findViewById(R.id.depositButtonId);
         depoCancelButton = findViewById(R.id.depositcancelButtonId);
         depositformbackButton = findViewById(R.id.deposifromtBeckButtonId);
-        depositAccountNumber = findViewById(R.id.depositaccountNumberId);
+//        depositAccountNumber = findViewById(R.id.depositaccountNumberId);
 
         spinner = findViewById(R.id.accountNumberId);
 
@@ -102,11 +105,6 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
 
             String  values = bundle.getString("items");
             methodname.setText(values);
-//            methodNumber.setText()
-//            methodNumber.setText(values +" Number");
-//            methodPin.setText(values +" Pin");
-
-
 
         }
 
@@ -116,6 +114,8 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.depositButtonId){
+
+
 
             Deposit d = new Deposit();
 
@@ -151,6 +151,7 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
                 @Override
                 public void onResponse(Call<Account> call, Response<Account> response) {
                     Account a = response.body();
+                    System.out.println("transfer account balanace======="+  a.getBalance());
                     a.setAccountNumber(a.getAccountNumber());
                     a.setCustId(a.getCustId());
                     a.setAccountType(a.getAccountType());
@@ -174,6 +175,7 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
 
                         @Override
                         public void onFailure(Call<Account> call, Throwable t) {
+                            t.printStackTrace();
 
                         }
                     });
@@ -181,11 +183,30 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
 
                 @Override
                 public void onFailure(Call<Account> call, Throwable t) {
+                    t.printStackTrace();
 
                 }
             });
 
+            History h = new History();
+            h.setAccountNumber(Integer.parseInt(spinner.getSelectedItem().toString()));
+            h.setOperationType(operationType.getText().toString());
+            h.setMethod(methodname.getText().toString());
+       //     h.setTransectionDate(date);
+            h.setAmount(Double.parseDouble(depositAmount.getText().toString()));
 
+            HistoryService historyService = RestClient.getRetrofitInstance().create(HistoryService.class);
+            historyService.savehistory(h).enqueue(new Callback<History>() {
+                @Override
+                public void onResponse(Call<History> call, Response<History> response) {
+
+                }
+
+                @Override
+                public void onFailure(Call<History> call, Throwable t) {
+                        t.printStackTrace();
+                }
+            });
 
         }
 

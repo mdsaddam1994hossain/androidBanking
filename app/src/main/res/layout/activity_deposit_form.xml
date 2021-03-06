@@ -42,17 +42,37 @@
 
     </LinearLayout>
 
-    <Spinner
-        android:id="@+id/accountNumberId"
-        android:layout_width="329dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="20dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="6"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:background="#E4E1E1"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Account Number"
+            android:textSize="15dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"/>
+        <Spinner
+            android:id="@+id/accountNumberId"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
 
+            />
 
+    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -70,73 +90,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:weightSum="6"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="8dp"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        >-->
-<!--        <TextView-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="2"-->
-<!--            android:text="Operation Type"-->
-<!--            android:textSize="15dp"/>-->
-<!--        <EditText-->
-<!--            android:layout_weight="4"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="20dp"-->
-<!--            android:text="Deposit"-->
-<!--            android:editable="false"-->
-<!--            android:id="@+id/depositoperationType"-->
-<!--            android:background="#CFF4EE"-->
-<!--            android:padding="10dp"/>-->
-
-<!--    </LinearLayout>-->
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Account Number">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/depositaccountNumberId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textSize="15dp"
-
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:weightSum="6"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="8dp"-->
-
-<!--        >-->
-<!--        <TextView-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="2"-->
-<!--            android:text="Account Number"-->
-<!--            android:textSize="15dp" />-->
-<!--        <EditText-->
-<!--            android:layout_weight="4"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="20dp"-->
-<!--            android:id="@+id/depositaccountNumberId"-->
-<!--            android:background="#CFF4EE"-->
-<!--            android:padding="10dp"/>-->
-
-<!--    </LinearLayout>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -153,31 +106,6 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:weightSum="6"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="8dp"-->
-<!--        >-->
-<!--        <TextView-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="2"-->
-<!--            android:text="Deposit from"-->
-<!--            android:textSize="15sp"/>-->
-<!--        <EditText-->
-<!--            android:layout_weight="4"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="20dp"-->
-<!--            android:text="hello"-->
-<!--            android:id="@+id/depositmethodNameId"-->
-<!--            android:background="#CFF4EE"-->
-<!--            android:padding="10dp"/>-->
-
-<!--    </LinearLayout>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/methodId"
@@ -196,31 +124,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:weightSum="6"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="8dp"-->
-<!--        >-->
-<!--        <TextView-->
-<!--            android:id="@+id/methodId"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="2"-->
-<!--            android:text="menumber"-->
-<!--            android:textSize="15dp"/>-->
-<!--        <EditText-->
-<!--            android:layout_weight="4"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="15dp"-->
-<!--            android:background="#CFF4EE"-->
-<!--            android:id="@+id/depositmethodNumber"-->
-<!--            android:padding="10dp"/>-->
-
-<!--    </LinearLayout>-->
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -238,33 +141,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:weightSum="6"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="8dp"-->
-<!--        >-->
-<!--        <TextView-->
-<!--            android:id="@+id/methodPin"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="2"-->
-<!--            android:text="pin"-->
-<!--            android:textSize="15dp"/>-->
-<!--        <EditText-->
-<!--            android:layout_weight="4"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="20dp"-->
-<!--            android:id="@+id/depositmethodPinId"-->
-<!--            android:background="#CFF4EE"-->
-<!--            android:inputType="textPassword"-->
-<!--            android:padding="10dp"-->
-<!--            />-->
-
-<!--    </LinearLayout>-->
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -280,33 +156,6 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:weightSum="6"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="8dp"-->
-<!--        >-->
-<!--        <TextView-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="2"-->
-<!--            android:text="Amount"-->
-<!--            android:textSize="15dp"/>-->
-<!--        <EditText-->
-<!--            android:layout_weight="4"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="20dp"-->
-<!--            android:id="@+id/depositamountId"-->
-<!--            android:background="#CFF4EE"-->
-<!--            android:padding="10dp"/>-->
-
-<!--    </LinearLayout>-->
-
-
-
-
 
     <LinearLayout
         android:layout_width="wrap_content"

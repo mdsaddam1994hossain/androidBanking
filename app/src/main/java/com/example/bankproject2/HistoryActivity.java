@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.bankproject2.model.Account;
+import com.example.bankproject2.model.History;
 import com.example.bankproject2.restClient.RestClient;
 import com.example.bankproject2.restService.AccountService;
 
@@ -25,6 +26,7 @@ public class HistoryActivity extends AppCompatActivity {
     Spinner spinner;
     List<Account> allAccount= new ArrayList<>();
     List<Integer> accountNumber = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,8 @@ public class HistoryActivity extends AppCompatActivity {
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                List<History> historiesByAccount = new ArrayList<>();
 
             }
         });

@@ -91,10 +91,6 @@ public class RechargeForm extends AppCompatActivity implements View.OnClickListe
             String  values = bundle.getString("items");
             operator.setText(values);
 
-            
-
-
-
         }
     }
 
@@ -109,14 +105,17 @@ public class RechargeForm extends AppCompatActivity implements View.OnClickListe
             accountService.getAccountById(Integer.parseInt(spinner.getSelectedItem().toString())).enqueue(new Callback<Account>() {
                 @Override
                 public void onResponse(Call<Account> call, Response<Account> response) {
-                    Account a = new Account();
-                    System.out.println("recharge account balanace======="+  a.getBalance());
+
+
+                    Account a = response.body();
+
+
                     a.setAccountNumber(a.getAccountNumber());
                     a.setCustId(a.getCustId());
                     a.setAccountType(a.getAccountType());
                     double amount = (Double.parseDouble(rechargeAmount.getText().toString()));
                     double oldBalance = a.getBalance();
-                    double newBalance = (oldBalance - amount);
+                    double newBalance = oldBalance - amount;
 
                     a.setBalance(newBalance);
                     //    a.setOpenDate(a.getOpenDate());

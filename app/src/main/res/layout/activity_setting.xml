@@ -17,7 +17,7 @@
 
         <ImageView
             android:src="@drawable/back_24"
-            android:id="@+id/transferBeckButtonId"
+            android:id="@+id/settingBeckButtonId"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:textSize="15dp"
-                android:inputType="textPassword"
+
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:textSize="15dp"
-                android:inputType="textPassword"
+
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -118,12 +118,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:textSize="15dp"
-                android:inputType="textPassword"
+
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/changeconfirmId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Changed Confirm"

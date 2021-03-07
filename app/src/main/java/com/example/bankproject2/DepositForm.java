@@ -40,7 +40,8 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
     AlertDialog.Builder alertdialogbuilder;
     int selected_account_number;
     Spinner spinner;
-   // Date date = new Date();
+    Date date = new Date();
+
     List<Account> allAccount= new ArrayList<>();
 
     List<Integer> accountNumber = new ArrayList<>();
@@ -54,6 +55,7 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deposit_form);
+
 
         methodname = findViewById(R.id.depositmethodNameId);
         operationType = findViewById(R.id.depositoperationType);
@@ -192,7 +194,7 @@ public class DepositForm extends AppCompatActivity implements View.OnClickListen
             h.setAccountNumber(Integer.parseInt(spinner.getSelectedItem().toString()));
             h.setOperationType(operationType.getText().toString());
             h.setMethod(methodname.getText().toString());
-       //     h.setTransectionDate(date);
+        //    h.setTransectionDate(date);
             h.setAmount(Double.parseDouble(depositAmount.getText().toString()));
 
             HistoryService historyService = RestClient.getRetrofitInstance().create(HistoryService.class);

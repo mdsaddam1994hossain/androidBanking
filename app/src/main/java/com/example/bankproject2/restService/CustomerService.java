@@ -23,4 +23,7 @@ public interface CustomerService {
 
     @POST("/api/customer")
     Call<Customer> saveCustomer(@Body Customer c);
+
+    @POST("/api/updateCustomer")
+    Call<Customer> UdpateCustomer(@Body Customer c);
 }

@@ -22,6 +22,8 @@ public interface AccountService {
     @GET("/api/account")
     Call<Account> getAccountById(@Query("accountNumber") int accountNumber);
 
+    @POST("/api/createAccount")
+    Call<Account> createAccount(@Body() Account a);
 
     @POST("/api/updateAccount")
     Call<Account> updateAccount(@Body Account a);
@@ -31,6 +33,8 @@ public interface AccountService {
 
     @POST("/api/transfer")
     Call<Transfer> savetransfer(@Body() Transfer t);
+
+
 
 
 }

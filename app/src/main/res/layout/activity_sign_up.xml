@@ -21,12 +21,12 @@
         android:layout_gravity="center_horizontal"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/fname_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/fname_text">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fname_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -35,12 +35,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lname_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/lname_text">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/lname_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -48,12 +48,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phone_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/phone_text">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -61,12 +61,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
   <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/emailText">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -74,12 +74,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signUp_pass_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password_text">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signUp_pass_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

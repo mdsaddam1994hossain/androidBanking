@@ -128,7 +128,8 @@ public class TransferForm extends AppCompatActivity implements View.OnClickListe
                     double amount = (Double.parseDouble(transferAmount.getText().toString()));
                     double oldBalance = a.getBalance();
                     double newBalance = (oldBalance - amount);
-
+                    double charge = (amount/100) * 1.2 ;
+                    double aftercharge = amount - charge;
                     a.setBalance(newBalance);
                     //    a.setOpenDate(a.getOpenDate());
                     a.setPassword(a.getPassword());
@@ -137,12 +138,68 @@ public class TransferForm extends AppCompatActivity implements View.OnClickListe
                         @Override
                         public void onResponse(Call<Account> call, Response<Account> response) {
                             Toast.makeText(TransferForm.this,"Transfer successfull",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(TransferForm.this,HomePage.class);
-                            startActivity(intent);
+//                            Intent intent = new Intent(TransferForm.this,HomePage.class);
+//                            startActivity(intent);
+                            // alert dialog start
+
+                            alertdialogbuilder = new AlertDialog.Builder(TransferForm.this);
+                            alertdialogbuilder.setTitle("Confirm Transfer");
+                            alertdialogbuilder.setMessage("Account Number : "+a.getAccountNumber() +"\n"
+                                                            + "Amount : "+ amount +"\n"
+                                                            + "charge : "+ charge +"\n"
+                                                            + "Amount Transfer : " + aftercharge);
+                            alertdialogbuilder.setIcon(R.drawable.dangerous_24);
+                            alertdialogbuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(TransferForm.this,HomePage.class);
+                                    startActivity(intent);
+                                }
+                            });
+
+                            alertdialogbuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                            alertdialogbuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                            AlertDialog alertDialog = alertdialogbuilder.create();
+                            alertDialog.show();
+
+
+
+                            // alert dialog end
                         }
 
                         @Override
                         public void onFailure(Call<Account> call, Throwable t) {
+                            t.printStackTrace();
+
+                        }
+                    });
+                    History h = new History();
+                    h.setAccountNumber(Integer.parseInt(spinner.getSelectedItem().toString()));
+                    h.setOperationType(operationType.getText().toString());
+                    h.setMethod(methodname.getText().toString());
+                    //     h.setTransectionDate(date);
+                    h.setAmount(Double.parseDouble(transferAmount.getText().toString()));
+                    h.setChargeAmount(charge);
+
+                    HistoryService historyService = RestClient.getRetrofitInstance().create(HistoryService.class);
+                    historyService.savehistory(h).enqueue(new Callback<History>() {
+                        @Override
+                        public void onResponse(Call<History> call, Response<History> response) {
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<History> call, Throwable t) {
                             t.printStackTrace();
 
                         }
@@ -156,25 +213,7 @@ public class TransferForm extends AppCompatActivity implements View.OnClickListe
                 }
             });
 
-            History h = new History();
-            h.setAccountNumber(Integer.parseInt(spinner.getSelectedItem().toString()));
-            h.setOperationType(operationType.getText().toString());
-            h.setMethod(methodname.getText().toString());
-            //     h.setTransectionDate(date);
-            h.setAmount(Double.parseDouble(transferAmount.getText().toString()));
-            HistoryService historyService = RestClient.getRetrofitInstance().create(HistoryService.class);
-            historyService.savehistory(h).enqueue(new Callback<History>() {
-                @Override
-                public void onResponse(Call<History> call, Response<History> response) {
 
-                }
-
-                @Override
-                public void onFailure(Call<History> call, Throwable t) {
-                    t.printStackTrace();
-
-                }
-            });
 
         }
 

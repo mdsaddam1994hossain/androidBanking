@@ -112,7 +112,8 @@ public class UtilityForm extends AppCompatActivity implements View.OnClickListen
                     a.setAccountType(a.getAccountType());
                     double amount = (Double.parseDouble(utiliutyAmount.getText().toString()));
                     double oldBalance = a.getBalance();
-                    double newBalance = oldBalance - amount;
+                    double charge = (amount/100) * 0.25 ;
+                    double newBalance = oldBalance - amount+charge;
 
                     a.setBalance(newBalance);
                     //    a.setOpenDate(a.getOpenDate());
@@ -122,8 +123,40 @@ public class UtilityForm extends AppCompatActivity implements View.OnClickListen
                         @Override
                         public void onResponse(Call<Account> call, Response<Account> response) {
                             Toast.makeText(UtilityForm.this,"Recharge successfull",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(UtilityForm.this,HomePage.class);
-                            startActivity(intent);
+//                            Intent intent = new Intent(UtilityForm.this,HomePage.class);
+//                            startActivity(intent);
+                            // start dialog
+                            alertdialogbuilder = new AlertDialog.Builder(UtilityForm.this);
+                            alertdialogbuilder.setTitle("Confirm Payment");
+                            alertdialogbuilder.setMessage("Service Name : "+ serviceName.getText().toString() +"\n"
+                                    + serviceName.getText().toString()+ " Number "+ utilityAccountNumber.getText().toString() +"\n"
+                                    + "Amount : "+ amount +"\n"
+                                    + "charge : "+ charge);
+
+                            alertdialogbuilder.setIcon(R.drawable.dangerous_24);
+                            alertdialogbuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(UtilityForm.this,HomePage.class);
+                                    startActivity(intent);
+                                }
+                            });
+
+                            alertdialogbuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                            alertdialogbuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                            AlertDialog alertDialog = alertdialogbuilder.create();
+                            alertDialog.show();
+                            // end dialog
                         }
 
                         @Override
@@ -139,6 +172,7 @@ public class UtilityForm extends AppCompatActivity implements View.OnClickListen
                     h.setMethod(serviceName.getText().toString());
                     //     h.setTransectionDate(date);
                     h.setAmount(Double.parseDouble(utiliutyAmount.getText().toString()));
+                    h.setChargeAmount(charge);
                     HistoryService historyService = RestClient.getRetrofitInstance().create(HistoryService.class);
                     historyService.savehistory(h).enqueue(new Callback<History>() {
                         @Override

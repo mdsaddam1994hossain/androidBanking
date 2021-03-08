@@ -115,7 +115,10 @@ public class RechargeForm extends AppCompatActivity implements View.OnClickListe
                     a.setAccountType(a.getAccountType());
                     double amount = (Double.parseDouble(rechargeAmount.getText().toString()));
                     double oldBalance = a.getBalance();
-                    double newBalance = oldBalance - amount;
+                    double charge = (amount/100) * 0.15 ;
+                    double newBalance = oldBalance - amount+charge;
+
+
 
                     a.setBalance(newBalance);
                     //    a.setOpenDate(a.getOpenDate());
@@ -125,8 +128,40 @@ public class RechargeForm extends AppCompatActivity implements View.OnClickListe
                         @Override
                         public void onResponse(Call<Account> call, Response<Account> response) {
                             Toast.makeText(RechargeForm.this,"Recharge successfull",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RechargeForm.this,HomePage.class);
-                            startActivity(intent);
+//                            Intent intent = new Intent(RechargeForm.this,HomePage.class);
+//                            startActivity(intent);
+                            // start alert dialog
+                            alertdialogbuilder = new AlertDialog.Builder(RechargeForm.this);
+                            alertdialogbuilder.setTitle("Confirm Recharge");
+                            alertdialogbuilder.setMessage("Operator Name : "+ operator.getText().toString() +"\n"
+                                    +operator.getText().toString()+ " Number "+ rechargeAccountNumber.getText().toString() +"\n"
+                                    + "Amount : "+ amount +"\n"
+                                    + "charge : "+ charge);
+
+                            alertdialogbuilder.setIcon(R.drawable.dangerous_24);
+                            alertdialogbuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(RechargeForm.this,HomePage.class);
+                                    startActivity(intent);
+                                }
+                            });
+
+                            alertdialogbuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                            alertdialogbuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            });
+                            AlertDialog alertDialog = alertdialogbuilder.create();
+                            alertDialog.show();
+                            // end alert dialog
                         }
 
                         @Override
@@ -142,6 +177,7 @@ public class RechargeForm extends AppCompatActivity implements View.OnClickListe
                     h.setMethod(operator.getText().toString());
                     //     h.setTransectionDate(date);
                     h.setAmount(Double.parseDouble(rechargeAmount.getText().toString()));
+                    h.setChargeAmount(charge);
                     HistoryService historyService = RestClient.getRetrofitInstance().create(HistoryService.class);
                     historyService.savehistory(h).enqueue(new Callback<History>() {
                         @Override

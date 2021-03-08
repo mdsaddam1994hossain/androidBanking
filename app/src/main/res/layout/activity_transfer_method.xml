@@ -41,7 +41,7 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="System Available For Transfer"
+                 android:text="System Available(1.2% charge apply)"
                  android:textSize="15sp"
                  android:padding="5dp"
                  android:layout_gravity="center_horizontal"

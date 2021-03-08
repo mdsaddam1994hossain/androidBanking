@@ -21,7 +21,7 @@ import retrofit2.Response;
 public class SettingActivity extends AppCompatActivity {
 
     TextInputEditText fname,lname,phone;
-    Button changeButton;
+    Button changeButton,balanceCheckButton;
 
     ImageView settingbackButton;
 
@@ -33,6 +33,7 @@ public class SettingActivity extends AppCompatActivity {
         fname = findViewById(R.id.fnameEditId);
         lname = findViewById(R.id.lnameEditId);
         phone = findViewById(R.id.phoneEditId);
+        balanceCheckButton = findViewById(R.id.balanceCheckId);
         settingbackButton = findViewById(R.id.settingBeckButtonId);
         changeButton = findViewById(R.id.changeconfirmId);
 
@@ -99,6 +100,14 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        balanceCheckButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this,BalanceCheckActivity.class);
+                startActivity(intent);
             }
         });
 

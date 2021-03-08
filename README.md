@@ -2,9 +2,10 @@
 ```
 # Author Md Saddam Hossain
 ```
-### Email: saddam30061994@gmail.com
+### Email : saddam30061994@gmail.com
 
 ## Technology Used
-- Angular 6
+- Android
 - Metarial Design
 - MySQL
+- Restful Service

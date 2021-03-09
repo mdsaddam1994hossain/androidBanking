@@ -6,7 +6,7 @@
 
 ## Technology Used
 - Android
-- Metarial Design
+- Material Design
 - MySQL
 - Restful Service
 
